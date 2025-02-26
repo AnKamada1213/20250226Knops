@@ -127,7 +127,7 @@ position: relative;
 .hidden {
   opacity: 0; 
   transform: translateY(30px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .visible {
@@ -379,12 +379,25 @@ PagetopとLINEボタン
 }
 
 /*-------------------------------------------
+共通
+-------------------------------------------*/
+#message,
+#question,
+#reason,
+#change,
+#voice,
+#menu,
+#coupon,
+#qa{
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/*-------------------------------------------
 メッセージ
 -------------------------------------------*/
 
 #message{
-  padding-top: 66px;
-  padding-bottom: 66px;
   margin: 0 auto;
   text-align: center;
   background-color: #F1ECEA;
@@ -409,7 +422,6 @@ PagetopとLINEボタン
   text-align: left;
 }
 
-/* イラスト画像を擬似要素で配置 */
 #message .problem-box::after {
   z-index: 10;
   display: block; 
@@ -424,7 +436,6 @@ PagetopとLINEボタン
   background-repeat: no-repeat;
 }
 
-/* チェックリスト */
 .problem-list {
   list-style: none;
   padding: 0;
@@ -438,7 +449,6 @@ PagetopとLINEボタン
   display: flex;
 }
 
-/* チェックボックスの枠 */
 .checkbox {
   width: 1rem;
   height: 1rem;
@@ -446,7 +456,6 @@ PagetopとLINEボタン
   margin-right: 1rem ;
 }
 
-/* チェックマーク画像 */
 .checkbox img {
   width: 100%;
   height: auto;
@@ -472,19 +481,19 @@ PagetopとLINEボタン
 .collage {
   margin-top: 40px;
   display: flex;
-  flex-wrap: wrap; /* 折り返し可能に */
-  justify-content: center; /* 中央寄せ */
-  gap: 10px; /* 画像間の隙間 */
-  list-style: none; /* liのデフォルトスタイル削除 */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
   padding: 0;
 }
 
 .collage li {
-  width: 23%; /* PC時は4つ横並び（隙間を考慮して約25%） */
+  width: 23%; 
 }
 
 .collage img {
-  width: 100%; /* 親要素に対して100% */
+  width: 100%; 
   height: auto;
   display: block;
 }
@@ -493,18 +502,16 @@ PagetopとLINEボタン
 問いかけ
 -------------------------------------------*/
 #question {
-  padding-top: 40px;
-  padding-bottom: 40px;
   margin: 0 auto;
   text-align: center;
-  background-color: #fff; /* 背景色 */
+  background-color: #fff; 
   background-image: 
     repeating-linear-gradient(#d5bdae 0px, #d5bdae 0.5px, transparent 0.5px, transparent 40px),
     repeating-linear-gradient(90deg, #d5bdae 0px, #d5bdae 0.5px, transparent 0.5px, transparent 40px);
-  background-size: 40px 40px; /* マスのサイズ */
-  background-repeat: repeat; /* 背景を繰り返す */
-  background-position: 0 0; /* 位置調整 */
-  height: 100%; /* 画面全体の高さを確保 */
+  background-size: 40px 40px;
+  background-repeat: repeat; 
+  background-position: 0 0; 
+  height: 100%; 
 }
 
 #question p{
@@ -512,7 +519,6 @@ PagetopとLINEボタン
 }
 
 #question .ita{
-  /* font-style: italic; */
   font-weight: bold;
 }
 
@@ -528,10 +534,8 @@ PagetopとLINEボタン
     background-color: #D5BDAE;
     margin: 0 auto ;
     text-align: center;
-    padding-top: 40px;
-    padding-bottom:40px ;
-
 }
+
 .reason-section {
     max-width: 800px;
     margin: 50px auto;
@@ -548,7 +552,6 @@ PagetopとLINEボタン
   color: #AA4D53
 }
 
-/* 「3」のデザイン */
 .reason-header .number {
     display: inline-block;
     background-color: #AA4D53;
@@ -562,7 +565,6 @@ PagetopとLINEボタン
     text-align: center;
 }
 
-/* リストを中央配置 */
 .reason-list {
     display: flex;
     flex-direction: column;
@@ -571,7 +573,7 @@ PagetopとLINEボタン
     max-width: 600px;
     margin: 24px auto;
 }
-/* 各理由のレイアウト */
+
 .reason-item {
     display: flex;
     align-items: center;
@@ -583,20 +585,19 @@ PagetopとLINEボタン
 .reason-item:last-child {
     border-bottom: none;
 }
-/* Point の縦書き */
+
 .point {
     font-size: 1.2rem;
     writing-mode: vertical-rl;
 }
 
-/* 番号（1,2,3）のデザイン */
 .reason-item h3 {
     font-size: 2.5rem;
-    color: #AA4D53; /* 赤色 */
+    color: #AA4D53; 
     font-family: 'Yu Mincho', 'Hiragino Mincho Pro', serif; /* 明朝体 */
     margin: 0 12px 0 4px;
 }
-/* タイトルとテキストを縦並びにする */
+
 .reason-content {
     display: flex;
     flex-direction: column;
@@ -606,14 +607,14 @@ PagetopとLINEボタン
     word-break: break-word;
     text-align: left;
 }
-/* タイトルのスタイル */
+
 .reason-title {
     font-weight: bold;
     font-size: 1.2rem;
     color: #AA4D53;
     margin-bottom: 5px;
 }
-/* テキストのスタイル */
+
 .reason-text {
     word-break: break-word;
 }
@@ -622,8 +623,6 @@ PagetopとLINEボタン
 begore/after
 -------------------------------------------*/
 #change{
-  padding-top: 40px;
-  padding-bottom: 40px;
   background-color: #F7F2EE;
   text-align: center;
   margin: 0 auto;
@@ -718,8 +717,6 @@ begore/after
   background-color: #D5BDAE;
   text-align: center;
   margin: 0 auto;
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 
 .voice-list{
@@ -751,8 +748,6 @@ begore/after
 
 #menu,
 #coupon{
-  padding-top: 40px;
-  padding-bottom: 40px;
   margin: 0 auto;
   text-align: center;
   background-color: #fff; /* 背景色 */
@@ -956,6 +951,12 @@ CTA
   width: 100%; 
   max-width: 300px;
   height: auto;
+  transition: transform 0.3s ease-in-out; 
+}
+
+.line-cta img:hover,
+.hotpepper-cta img:hover {
+  transform: scale(1.1);
 }
 
 #cta .strong-red-text{
@@ -984,9 +985,9 @@ CTA
 -------------------------------------------*/
 
 #shop{
-  margin: 40px auto;
+  margin: 0px auto;
   text-align: center;
-  padding: 40px 20px;
+  padding: 60px 20px;
   background-color: #d5bdae;
 }
 
@@ -1078,6 +1079,10 @@ hr {
 /*-------------------------------------------
 系列店舗
 -------------------------------------------*/
+#series{
+  margin: 60px 0;
+}
+
 .series-list li {
   margin: 24px auto;
   width: 80%;
@@ -1122,7 +1127,7 @@ CEO
 #ceo {
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 60px 20px;
   background-color: #fff;
 }
 
@@ -1190,8 +1195,6 @@ CEO
 }
 
 #qa{
-  padding-top: 40px;
-  padding-bottom: 40px;
   margin: 0 auto;
   text-align: center;
   background-color: #fff; /* 背景色 */
@@ -1273,8 +1276,8 @@ transform: rotate(-45deg);
 -------------------------------------------*/
 
 #google-map{
-  padding-top: 66px;
-  padding-bottom: 66px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   margin: 0 auto;
   text-align: center;
   background-color: #F1ECEA;

@@ -47,16 +47,16 @@ $(function () {
     $('html, body').animate({ scrollTop: 0 }, 600);
     return false;
   });
-
+  
   $(function () {
     function fadeInOnScroll() {
         $(".fade-in").each(function () {
             let elementTop = $(this).offset().top; // 要素の位置
             let windowHeight = $(window).height(); // ウィンドウの高さ
-            let scrollTop = $(window).scrollTop(); // スクロール量
+            let scrollTop = $(window).scrollTop(); // 現在のスクロール位置
 
-            // 画面の1/10（10%）スクロールしたら表示
-            if (scrollTop + windowHeight * 0.1 > elementTop) {
+            // 要素の上端が画面の下端より上にある（＝表示されている）場合に "visible" クラスを追加
+            if (scrollTop + windowHeight > elementTop) {
                 $(this).addClass("visible");
             }
         });
@@ -66,18 +66,28 @@ $(function () {
     fadeInOnScroll(); // 初回実行
 });
 
-  // アコーディオンエリア
-  $('.qa_title').on('click', function () {
-    var findElm = $(this).next(".qa_box");
-    $(findElm).slideToggle();
-    $(this).toggleClass('close');
-  });
 
-  $('.accordion-area section:first-of-type').addClass("open");
-  $(".open").each(function () {
-    $(this).children('.qa_title').addClass('close');
-    $(this).children('.qa_box').slideDown(500);
-  });
+// すべての回答エリアを非表示に
+$(".qa_box").hide();
+
+// 最初の質問だけ開いた状態にする
+$(".accordion-area li:first-of-type .qa_box").show();
+$(".accordion-area li:first-of-type .qa_title").addClass("close");
+
+// アコーディオンのクリックイベント
+$(".qa_title").on("click", function () {
+  var findElm = $(this).next(".qa_box");
+
+  if ($(this).hasClass("close")) {
+    $(this).removeClass("close");
+    $(findElm).slideUp();
+  } else {
+    $(".qa_title").removeClass("close"); // 他の開いているタイトルを閉じる
+    $(".qa_box").slideUp(); // 他の開いている回答を閉じる
+    $(this).addClass("close");
+    $(findElm).slideDown();
+  }
+});
 
   // トップページのメッセージ
   $(".text-box p").css({

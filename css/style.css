@@ -243,7 +243,7 @@ PagetopとLINEボタン
   position: fixed;
   right: 10px;
   bottom: 5px;
-  z-index: 999;
+  z-index: 9999 !important; 
   display: flex;
   gap:10px;
 }
@@ -1593,15 +1593,6 @@ page-topやline等
 #money .line3{
   margin: 32px auto 0px auto;
 } 
-
-/*-------------------------------------------
-lineバナー
--------------------------------------------*/
-
-.line3 {
-  width: 240px;
-  height: 70px;
-}
 
 /*-------------------------------------------
 CTA

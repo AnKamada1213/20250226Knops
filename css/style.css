@@ -778,6 +778,7 @@ begore/after
 
 .menu-card {
   background-color: #fff;
+  border:1px solid #AA4D53;
   border-radius: 10px;
   padding: 18px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);

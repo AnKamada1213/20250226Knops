@@ -74,6 +74,19 @@ li {
   }
 }
 
+.station-info {
+  position: absolute;
+  top: 0px;  /* 画像の右上 */
+  right: 0px;
+  background: rgba(255, 255, 255, 0.8); /* 半透明の白背景 */
+  color: #333; /* 文字色 */
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* 影をつけて視認性アップ */
+}
+
 .top-logo p {
   opacity: 0; /* 最初は見えない */
   animation: fadeInDown 1s ease-out forwards;
@@ -459,13 +472,14 @@ PagetopとLINEボタン
 }
 
 .checkbox {
-  width: 20px; /* 固定サイズを指定 */
+  width: 20px;  
   height: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-right: 1rem;
+  justify-content: flex-start;
+  margin-right: 10px;
 }
+
 
 .checkbox img {
   width: 16px; /* アイコンのサイズを明示的に指定 */

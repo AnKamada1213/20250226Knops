@@ -56,7 +56,7 @@ li {
 
 .top-logo{
   position: absolute;
-  top: 25vh;
+  top: 20vh;
   left: 10%;
   display: flex;
   flex-direction: column;
@@ -88,18 +88,20 @@ li {
 }
 
 .store-name{
-  font-size: 6.4rem;
+  font-size: 6.8rem;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .company-name{
-  font-size: 1.6rem;
+  font-size: 2.4rem;
+  margin-left: 8px;
+  color: #AA4D53;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .text-box {
  position: absolute;
- top: 55vh;
+ top: 58vh;
  left: 10%;
  display: flex;
  flex-direction: column;
@@ -457,16 +459,20 @@ PagetopとLINEボタン
 }
 
 .checkbox {
-  width: 1rem;
-  height: 1rem;
+  width: 20px; /* 固定サイズを指定 */
+  height: 20px;
   display: flex;
-  margin-right: 1rem ;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
 }
 
 .checkbox img {
-  width: 100%;
-  height: auto;
+  width: 16px; /* アイコンのサイズを明示的に指定 */
+  height: 16px;
+  object-fit: contain; /* 画像の比率を保つ */
 }
+
 
 .red-text{
   color: #AA4D53;
@@ -1380,7 +1386,7 @@ SP
 }
 
 .text-box {
- top: 60vh;
+ top: 65vh;
  left: 3%;
  display: flex;
  flex-direction: column;
